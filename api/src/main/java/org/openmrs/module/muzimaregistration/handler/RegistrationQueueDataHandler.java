@@ -30,6 +30,7 @@ import org.openmrs.module.muzima.model.QueueData;
 import org.openmrs.module.muzima.model.handler.QueueDataHandler;
 import org.openmrs.module.muzimaregistration.api.RegistrationDataService;
 import org.openmrs.module.muzimaregistration.api.model.RegistrationData;
+import org.openmrs.module.muzimaregistration.util.ISO8601Util;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -45,7 +46,7 @@ public class RegistrationQueueDataHandler implements QueueDataHandler {
 
     private static final String DISCRIMINATOR_VALUE = "registration";
 
-    private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static final DateFormat dateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
     private final Log log = LogFactory.getLog(RegistrationQueueDataHandler.class);
 

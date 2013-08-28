@@ -32,6 +32,7 @@ import org.openmrs.module.muzima.model.QueueData;
 import org.openmrs.module.muzima.model.handler.QueueDataHandler;
 import org.openmrs.module.muzimaregistration.api.RegistrationDataService;
 import org.openmrs.module.muzimaregistration.api.model.RegistrationData;
+import org.openmrs.module.muzimaregistration.util.ISO8601Util;
 import org.springframework.stereotype.Component;
 
 import java.text.DateFormat;
@@ -48,7 +49,7 @@ public class EncounterQueueDataHandler implements QueueDataHandler {
 
     private static final String DISCRIMINATOR_VALUE = "encounter";
 
-    private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static final DateFormat dateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
     private final Log log = LogFactory.getLog(EncounterQueueDataHandler.class);
 
