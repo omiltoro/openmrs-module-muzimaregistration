@@ -26,6 +26,11 @@
         <module name="muzimaregistration-omod" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="muzimaregistration" target="1.6" />
+      <module name="muzimaregistration-api" target="1.6" />
+      <module name="muzimaregistration-omod" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
