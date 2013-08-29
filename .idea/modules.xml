@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/muzimaregistration.iml" filepath="$PROJECT_DIR$/muzimaregistration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/muzimaregistration-api.iml" filepath="$PROJECT_DIR$/api/muzimaregistration-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/omod/muzimaregistration-omod.iml" filepath="$PROJECT_DIR$/omod/muzimaregistration-omod.iml" />
+    </modules>
+  </component>
+</project>
+
