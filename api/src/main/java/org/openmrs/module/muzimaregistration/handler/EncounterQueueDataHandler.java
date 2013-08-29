@@ -49,6 +49,7 @@ public class EncounterQueueDataHandler implements QueueDataHandler {
 
     private static final String DISCRIMINATOR_VALUE = "encounter";
 
+    /* convert date to correct ISO format */
     private static final DateFormat dateFormat =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
     private final Log log = LogFactory.getLog(EncounterQueueDataHandler.class);
