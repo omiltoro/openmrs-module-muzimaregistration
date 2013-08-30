@@ -82,10 +82,15 @@ public class RegistrationQueueDataHandler implements QueueDataHandler {
             unsavedPatient.addIdentifier(patientIdentifier);
 
             String birthdate = JsonPath.read(payload, "$['patient.birthdate']");
+            try {
+                unsavedPatient.setBirthdate(ISO8601Util.toCalendar(birthdate).getTime());
+            } catch (ParseException e) {
+                logger.error(this.getClass().getSimpleName(), "Unable to parse date data from json payload.", e);
+            }
             String birthdateEstimated = JsonPath.read(payload, "$['patient.birthdate_estimated']");
             String gender = JsonPath.read(payload, "$['patient.gender']");
 
-            unsavedPatient.setBirthdate(parseDate(birthdate));
+            //unsavedPatient.setBirthdate(parseDate(birthdate));
             unsavedPatient.setBirthdateEstimated(Boolean.parseBoolean(birthdateEstimated));
             unsavedPatient.setGender(gender);
 

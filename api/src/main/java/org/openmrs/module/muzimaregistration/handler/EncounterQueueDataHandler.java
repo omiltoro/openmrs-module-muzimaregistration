@@ -90,7 +90,12 @@ public class EncounterQueueDataHandler implements QueueDataHandler {
         encounter.setLocation(location);
 
         String encounterDatetime = JsonPath.read(payload, "$['encounter']['datetime']");
-        encounter.setEncounterDatetime(parseDate(encounterDatetime));
+        //encounter.setEncounterDatetime(parseDate(encounterDatetime));
+        try {
+            encounter.setEncounterDatetime(ISO8601Util.toCalendar(encounterDatetime).getTime());
+        } catch (ParseException e) {
+            logger.error(this.getClass().getSimpleName(), "Unable to parse date data from json payload.", e);
+        }
 
         List<Object> obsObjects = JsonPath.read(payload, "$['obs']");
         for (Object obsObject : obsObjects) {
