@@ -6,11 +6,7 @@ import org.junit.Test;
 import org.openmrs.module.muzima.model.QueueData;
 
 /**
- * Created with IntelliJ IDEA.
- * User: REACH9
- * Date: 9/3/13
- * Time: 9:43 AM
- * To change this template use File | Settings | File Templates.
+ * Give brief description for this class
  */
 public class RegistrationQueueDataHandlerTest {
     private static String registrationJson;
@@ -22,7 +18,7 @@ public class RegistrationQueueDataHandlerTest {
     @Test
     public void accept_shouldHandleTheOnlyQueueDataWithMatchingDiscriminator() throws Exception {
         QueueData queueData = new QueueData();
-        queueData.setDiscriminator("tb");
+        queueData.setDiscriminator("tbdata");
 
         Boolean actualResult = new RegistrationQueueDataHandler().accept(queueData);
 
