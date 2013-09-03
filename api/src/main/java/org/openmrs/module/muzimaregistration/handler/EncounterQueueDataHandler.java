@@ -41,8 +41,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-/**
- */
+
 @Component
 @Handler(supports = QueueData.class, order = 50)
 public class EncounterQueueDataHandler implements QueueDataHandler {
@@ -134,6 +133,14 @@ public class EncounterQueueDataHandler implements QueueDataHandler {
         return date;
     }
 
+    /**
+     * Flag whether the current queue data handler can handle the queue data.
+     * @should handle the only queue data with matching discriminator
+     * @should throw exception on invalid payload structure
+     * @should successfuly create data on valid payload structure
+     * @param queueData the queue data.
+     * @return true when the handler can handle the queue data.
+     */
     @Override
     public boolean accept(final QueueData queueData) {
         return StringUtils.equals(DISCRIMINATOR_VALUE, queueData.getDiscriminator());

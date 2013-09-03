@@ -44,6 +44,7 @@ import java.util.List;
 @Handler(supports = QueueData.class, order = 50)
 public class RegistrationQueueDataHandler implements QueueDataHandler {
 
+
     private static final String DISCRIMINATOR_VALUE = "registration";
 
     /*   convert date to correct ISO format*/
@@ -196,7 +197,9 @@ public class RegistrationQueueDataHandler implements QueueDataHandler {
 
     /**
      * Flag whether the current queue data handler can handle the queue data.
-     *
+     * @should handle the only queue data with matching discriminator
+     * @should throw exception on invalid payload structure
+     * @should successfuly create data on valid payload structure
      * @param queueData the queue data.
      * @return true when the handler can handle the queue data.
      */
